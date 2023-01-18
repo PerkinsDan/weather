@@ -66,8 +66,8 @@ const Forecast = () => {
   }
 
   return (
-    <div className='w-3/4 border absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-2/3 p-12 flex flex-col justify-between'>
-      <div className='flex justify-between items-center'>
+    <div className='mx-4 space-y-16 md:mx-auto md:w-3/4 md:border lg:absolute lg:top-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 lg:min-h-[66%] p-12 flex flex-col justify-between'>
+      <div className='flex flex-col lg:flex-row justify-between items-center gap-4'>
         <div>
           <h1 className='text-3xl'>{forecast?.location.name}</h1>
           <h2 className='font-bold'>{forecast?.location.country}</h2>
@@ -89,7 +89,7 @@ const Forecast = () => {
           <h1 className='w-min'>{forecast?.current.condition.text}</h1>
         </div>
       </div>
-      <div className='flex justify-around'>
+      <div className='flex flex-wrap justify-around gap-12'>
         <div className='flex flex-col items-center border border-gray-200 p-12 rounded-md w-72'>
           <h3 className='mb-8 font-bold'>Temperature</h3> 
           <label className='relative inline-flex items-center cursor-pointer mb-8'>
@@ -212,9 +212,10 @@ const Forecast = () => {
           )}
         </div>
       </div>
-      <div>
-        Go to forecast:
-      </div>
+      <a href='#' className='flex mx-auto bg-gray-200 px-12 py-4 justify-between w-full lg:w-1/2 rounded'>
+        <h3>Go to full forecast:</h3>
+        <p className='text-blue-400'>{city}</p>
+      </a>
     </div>
   );
 };
