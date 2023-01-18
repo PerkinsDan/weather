@@ -66,7 +66,7 @@ const Forecast = () => {
   }
 
   return (
-    <div className='w-3/4 border absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-2/3 p-12'>
+    <div className='w-3/4 border absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-2/3 p-12 flex flex-col justify-between'>
       <div className='flex justify-between items-center'>
         <div>
           <h1 className='text-3xl'>{forecast?.location.name}</h1>
@@ -81,7 +81,7 @@ const Forecast = () => {
             className={`w-full border p-3 h-max rounded ${errStyle}`}
           />
         </form>
-        <div className='flex justify-center items-center bg-gray-300 rounded pl-2 pr-4'>
+        <div className='flex justify-center items-center border border-gray-200 rounded pl-2 pr-4'>
           <img
             src={forecast?.current.condition.icon}
             alt={forecast?.current.condition.text}
@@ -89,9 +89,10 @@ const Forecast = () => {
           <h1 className='w-min'>{forecast?.current.condition.text}</h1>
         </div>
       </div>
-      <div className='flex justify-between my-16'>
-        <div>
-          <label className='relative inline-flex items-center cursor-pointer'>
+      <div className='flex justify-around'>
+        <div className='flex flex-col items-center border border-gray-200 p-12 rounded-md w-72'>
+          <h3 className='mb-8 font-bold'>Temperature</h3> 
+          <label className='relative inline-flex items-center cursor-pointer mb-8'>
             <span className='mr-3 text-sm font-medium text-gray-900 dark:text-gray-300'>
               Celsius
             </span>
@@ -102,7 +103,7 @@ const Forecast = () => {
                 onChange={() => setTempType(!tempType)}
                 className='sr-only peer'
               />
-              <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+              <div className="w-11 h-6 bg-slate-800 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
             </div>
             <span className='ml-3 text-sm font-medium text-gray-900 dark:text-gray-300'>
               Farenheit
@@ -132,8 +133,9 @@ const Forecast = () => {
             </div>
           )}
         </div>
-        <div>
-          <label className='relative inline-flex items-center cursor-pointer'>
+        <div className='flex flex-col items-center border border-gray-200 p-12 rounded-md w-72'> 
+          <h3 className='mb-8 font-bold'>Wind</h3> 
+          <label className='relative inline-flex items-center cursor-pointer mb-8'>
             <span className='mr-3 text-sm font-medium text-gray-900 dark:text-gray-300'>
               Kilometers
             </span>
@@ -144,7 +146,7 @@ const Forecast = () => {
                 onChange={() => setMeasurementType(!measurementType)}
                 className='sr-only peer'
               />
-              <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+              <div className="w-11 h-6 bg-slate-800 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
             </div>
             <span className='ml-3 text-sm font-medium text-gray-900 dark:text-gray-300'>
               Miles
@@ -174,10 +176,11 @@ const Forecast = () => {
             </div>
           )}
         </div>
-        <div>
-          <label className='relative inline-flex items-center cursor-pointer'>
+        <div className='flex flex-col items-center border border-gray-200 p-12 rounded-md w-72'>
+          <h3 className='mb-8 font-bold'>Precipitation</h3> 
+          <label className='relative inline-flex items-center cursor-pointer mb-8'>
             <span className='mr-3 text-sm font-medium text-gray-900 dark:text-gray-300'>
-              Metric
+              mm 
             </span>
             <div className='relative'>
               <input
@@ -186,10 +189,10 @@ const Forecast = () => {
                 onChange={() => setMeasurementType2(!measurementType2)}
                 className='sr-only peer'
               />
-              <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+              <div className="w-11 h-6 bg-slate-800 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
             </div>
             <span className='ml-3 text-sm font-medium text-gray-900 dark:text-gray-300'>
-              Imperial
+              inch
             </span>
           </label>
           {measurementType2 ? (
@@ -208,6 +211,9 @@ const Forecast = () => {
             </div>
           )}
         </div>
+      </div>
+      <div>
+        Go to forecast:
       </div>
     </div>
   );
