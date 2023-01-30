@@ -67,7 +67,7 @@ const Forecast = () => {
 
   return (
     <div className='mx-4 space-y-16 md:mx-auto md:w-3/4 md:border lg:absolute lg:top-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 lg:min-h-[66%] p-12 flex flex-col justify-between'>
-      <div className='flex flex-col lg:flex-row justify-between items-center gap-4'>
+      <div className='flex flex-col items-center justify-between gap-4 lg:flex-row'>
         <div>
           <h1 className='text-3xl'>{forecast?.location.name}</h1>
           <h2 className='font-bold'>{forecast?.location.country}</h2>
@@ -81,7 +81,7 @@ const Forecast = () => {
             className={`w-full border p-3 h-max rounded ${errStyle}`}
           />
         </form>
-        <div className='flex justify-center items-center border border-gray-200 rounded pl-2 pr-4'>
+        <div className='flex items-center justify-center pl-2 pr-4 border border-gray-200 rounded'>
           <img
             src={forecast?.current.condition.icon}
             alt={forecast?.current.condition.text}
@@ -90,9 +90,9 @@ const Forecast = () => {
         </div>
       </div>
       <div className='flex flex-wrap justify-around gap-12'>
-        <div className='flex flex-col items-center border border-gray-200 p-12 rounded-md w-72'>
+        <div className='flex flex-col items-center p-12 border border-gray-200 rounded-md w-72'>
           <h3 className='mb-8 font-bold'>Temperature</h3> 
-          <label className='relative inline-flex items-center cursor-pointer mb-8'>
+          <label className='relative inline-flex items-center mb-8 cursor-pointer'>
             <span className='mr-3 text-sm font-medium text-gray-900 dark:text-gray-300'>
               Celsius
             </span>
@@ -133,9 +133,9 @@ const Forecast = () => {
             </div>
           )}
         </div>
-        <div className='flex flex-col items-center border border-gray-200 p-12 rounded-md w-72'> 
+        <div className='flex flex-col items-center p-12 border border-gray-200 rounded-md w-72'> 
           <h3 className='mb-8 font-bold'>Wind</h3> 
-          <label className='relative inline-flex items-center cursor-pointer mb-8'>
+          <label className='relative inline-flex items-center mb-8 cursor-pointer'>
             <span className='mr-3 text-sm font-medium text-gray-900 dark:text-gray-300'>
               Kilometers
             </span>
@@ -176,9 +176,9 @@ const Forecast = () => {
             </div>
           )}
         </div>
-        <div className='flex flex-col items-center border border-gray-200 p-12 rounded-md w-72'>
+        <div className='flex flex-col items-center p-12 border border-gray-200 rounded-md w-72'>
           <h3 className='mb-8 font-bold'>Precipitation</h3> 
-          <label className='relative inline-flex items-center cursor-pointer mb-8'>
+          <label className='relative inline-flex items-center mb-8 cursor-pointer'>
             <span className='mr-3 text-sm font-medium text-gray-900 dark:text-gray-300'>
               mm 
             </span>
@@ -212,9 +212,9 @@ const Forecast = () => {
           )}
         </div>
       </div>
-      <a href='#' className='flex mx-auto bg-gray-200 px-12 py-4 justify-between w-full lg:w-1/2 rounded'>
+      <a href={city} className='flex justify-between w-full px-12 py-4 mx-auto bg-gray-200 rounded lg:w-1/2'>
         <h3>Go to full forecast:</h3>
-        <p className='text-blue-400'>{city}</p>
+        <p className='text-blue-400'>{forecast?.location.name}</p>
       </a>
     </div>
   );
